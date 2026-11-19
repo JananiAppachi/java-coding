@@ -11,7 +11,7 @@ class Node {
     }
 }
 
-public class LinkedList {
+public class SinglyLinkedListOperations {
     public Node header = null;
 
     public void addFirst(int data) {
@@ -137,7 +137,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList obj = new LinkedList();
+        SinglyLinkedListOperations obj = new SinglyLinkedListOperations();
         obj.addFirst(30);
         obj.printList();
         obj.addFirst(10);
