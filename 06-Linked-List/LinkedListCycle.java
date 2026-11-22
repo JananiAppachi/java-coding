@@ -7,6 +7,12 @@ public class LinkedListCycle {
             t = t.next;
             h = h.next.next;
             if (h == t) {
+                t = header;
+                while (t.next != h.next) {
+                    t = t.next;
+                    h = h.next;
+                }
+                h.next = null;
                 return true;
             }
         }
@@ -20,12 +26,14 @@ public class LinkedListCycle {
         obj.addLast(2);
         obj.addLast(3);
         obj.addLast(4);
-        // Node curr = obj.header;
-        // Node st = obj.header.next;
-        // curr = curr.next.next.next;
-        // curr.next = st;
+        Node curr = obj.header;
+        Node st = obj.header.next;
+        curr = curr.next.next.next;
+        curr.next = st;
 
+        // obj.printList();
         LinkedListCycle obj2 = new LinkedListCycle();
         System.out.println(obj2.hasCycle(obj.header));
+        obj.printList();
     }
 }
