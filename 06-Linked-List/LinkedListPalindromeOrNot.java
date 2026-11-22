@@ -20,7 +20,7 @@ public class LinkedListPalindromeOrNot {
             i++;
             curr = curr.next;
         }
-        // Node temp = curr;
+        Node temp = curr;
         Node prev = curr;
         if (curr.next != null) {
             curr = curr.next;
@@ -30,7 +30,6 @@ public class LinkedListPalindromeOrNot {
         while (curr != null) {
             Node nxt = curr.next;
             curr.next = prev;
-            prev.next = null;
             prev = curr;
             if (nxt != null) {
                 curr = nxt;
@@ -39,7 +38,7 @@ public class LinkedListPalindromeOrNot {
             } else
                 break;
         }
-        // temp.next = null;
+        temp.next = null;
         return curr;
     }
 
@@ -51,7 +50,7 @@ public class LinkedListPalindromeOrNot {
         Node newHeader = reverseSecondHalf(header);
         Node first = header;
         Node last = newHeader;
-        while (first.next != null && last != null) {
+        while (first != null && last != null) {
             if (first.data != last.data) {
                 return false;
             }
